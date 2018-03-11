@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace StockMarket
 {
-    class RealTimeData : StockMarket
+    class MarketByOrder : StockMarketDisplay
     {
-        StockData currentData;
+        public override void OnNext(StockData value)
+        {
+            // do stuff
+        }
     }
 }
