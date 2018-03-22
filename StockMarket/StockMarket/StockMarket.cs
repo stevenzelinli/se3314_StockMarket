@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace StockMarket
 {
-    abstract class StockMarket : IObservable<StockData>
+    public abstract class StockMarket : IObservable<StockData>
     {
-        private List<IObserver<StockData>> observers;
-        public StockMarket()
-        {
-            observers = new List<IObserver<StockData>>();
-        }
+        protected List<IObserver<StockData>> observers;
+        protected StockData stockData;
         /**
          * This functions as the 'Register' for observables
          */
@@ -22,6 +19,7 @@ namespace StockMarket
             {
                 observers.Add(observer);
             }
+            observer.OnNext(stockData);
             return new Unsubscriber(observers, observer);
         }
 
@@ -63,6 +61,13 @@ namespace StockMarket
                 if (_observer != null && _observers.Contains(_observer))
                     _observers.Remove(_observer);
             }
+        }
+
+        //STOCK DATA
+        public StockData CurrentStocks
+        {
+            get { return stockData; }
+            set { stockData = value; }
         }
     }
 }

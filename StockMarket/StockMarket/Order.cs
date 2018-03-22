@@ -6,25 +6,22 @@ using System.Threading.Tasks;
 
 namespace StockMarket
 {
-    class Order
+    public class Order
     {
-        public enum OrderType { BUY, SELL };
-        OrderType orderType;
-        string orderDate ;
+        DateTime orderDate ;
         double orderPrice;
-        long orderSize;
-        public Order(string date, OrderType type, long size, double price)
+        int orderSize;
+        public Order(int size, double price)
         {
-            orderDate = date;
+            orderDate = DateTime.Now;
             orderSize = size;
             orderPrice = price;
-            orderType = type;
         }
-        public string OrderDate {
+        public DateTime OrderDate {
             get { return orderDate; }
             set { orderDate = value; }
         }
-        public long OrderSize
+        public int OrderSize
         {
             get { return orderSize; }
             set { orderSize = value; }
@@ -34,10 +31,9 @@ namespace StockMarket
             get { return orderPrice; }
             set { orderPrice = value; }
         }
-        public OrderType Type
+        public Order ShallowCopy()
         {
-            get { return orderType; }
-            set { orderType = value; }
+            return (Order)this.MemberwiseClone();
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StockMarket
 {
-    abstract class StockMarketDisplay : IObserver<StockData>
+    public abstract class StockMarketDisplay : IObserver<StockData>
     {
         private IDisposable unSubscriber; // used to remove observer from list
         /**

@@ -14,6 +14,8 @@ namespace StockMarket
     {
         // determines whether the market is open or not (intialized?)
         private Boolean marketIsOpen;
+        // UP TO DATE DATA
+        public StockMarket realTimeData;
 
         public StockMarketMainForm()
         {
@@ -21,7 +23,27 @@ namespace StockMarket
             stopTradingToolStripMenuItem.Enabled = false;
             watchToolStripMenuItem.Visible = false;
             ordersToolStripMenuItem.Visible = false;
+            //CREATE NEW INSTANCE OF DATA
+            realTimeData = new RealTimeData();
+            //LOAD TABS FOR COMPANIES
+            foreach (var company in realTimeData.CurrentStocks.CompanyList)
+            {
+                ToolStripMenuItem orderItem = new ToolStripMenuItem(company.CompanyName);
+                orderItem.Click += new EventHandler(WatchMarketByOrderClickHandler);
+                marketByOrderToolStripMenuItem.DropDownItems.Add(orderItem);
+
+                ToolStripMenuItem priceItem = new ToolStripMenuItem(company.CompanyName);
+                priceItem.Click += new EventHandler(WatchMarketByPriceClickHandler);
+                marketByPriceToolStripMenuItem.DropDownItems.Add(priceItem);
+
+            }
         }
+
+        public StockMarket RealTimeData
+        {
+            get { return realTimeData; }
+        }
+
         private void tileVerticalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Tile all child forms vertically.
@@ -78,6 +100,57 @@ namespace StockMarket
         private void microsoftToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void stockStateSummaryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StockStateSummaryForm summaryForm = new StockStateSummaryForm();
+            summaryForm.MdiParent = this;
+            summaryForm.setupControl();
+            summaryForm.Show();
+            stockStateSummaryToolStripMenuItem.Enabled = false;
+        }
+
+        private void WatchMarketByOrderClickHandler(object sender, EventArgs e)
+        {
+            ToolStripMenuItem clickedItem = (ToolStripMenuItem)sender;
+            MarketByOrderForm form = new MarketByOrderForm(clickedItem.Text);
+            form.MdiParent = this;
+            form.linkToData();
+            form.Show();
+        }
+
+        private void WatchMarketByPriceClickHandler(object sender, EventArgs e)
+        {
+            ToolStripMenuItem clickedItem = (ToolStripMenuItem)sender;
+            MarketByPriceForm form = new MarketByPriceForm(clickedItem.Text);
+            form.MdiParent = this;
+            form.linkToData();
+            form.Show();
+        }
+
+        private void StockMarketMainForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void watchToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bidToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BidForm bidForm = new BidForm();
+            bidForm.MdiParent = this;
+            bidForm.Show();
+        }
+
+        private void askToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SellForm sellForm = new SellForm();
+            sellForm.MdiParent = this;
+            sellForm.Show();
         }
     }
 }

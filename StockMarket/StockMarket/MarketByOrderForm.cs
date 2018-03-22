@@ -12,9 +12,28 @@ namespace StockMarket
 {
     public partial class MarketByOrderForm : Form
     {
-        public MarketByOrderForm()
+        MarketByOrder control;
+        StockMarket market;
+        string companyName;
+
+        public MarketByOrderForm(string companyName)
         {
             InitializeComponent();
+            this.companyName = companyName;
+            this.Text += " - " + companyName;
+        }
+        public void linkToData()
+        {
+            StockMarketMainForm mdiParent = (StockMarketMainForm)this.MdiParent;
+
+            market = mdiParent.RealTimeData;
+            control = new MarketByOrder(this.companyName);
+            control.Subscribe(market);
+            dataGridView.DataSource = control.DataTable;
+        }
+        ~MarketByOrderForm()
+        {
+            market.UnSubscribe(control);
         }
     }
 }

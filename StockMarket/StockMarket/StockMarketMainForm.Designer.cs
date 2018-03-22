@@ -34,25 +34,19 @@
             this.stopTradingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.watchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockStateSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.marketByPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.askToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listWindowsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cascadeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileHorizontalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tileVerticalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.watchToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stockStateSummaryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marketByOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.marketByPriceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.appleIncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.facebookIncToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.microsoftToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.appleIncToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.facebookIncToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.bidToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.askToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,28 +79,75 @@
             // beginTradingToolStripMenuItem
             // 
             this.beginTradingToolStripMenuItem.Name = "beginTradingToolStripMenuItem";
-            this.beginTradingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.beginTradingToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.beginTradingToolStripMenuItem.Text = "Begin Trading";
             this.beginTradingToolStripMenuItem.Click += new System.EventHandler(this.beginTradingToolStripMenuItem_Click);
             // 
             // stopTradingToolStripMenuItem
             // 
             this.stopTradingToolStripMenuItem.Name = "stopTradingToolStripMenuItem";
-            this.stopTradingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.stopTradingToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.stopTradingToolStripMenuItem.Text = "Stop Trading";
             this.stopTradingToolStripMenuItem.Click += new System.EventHandler(this.stopTradingToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(144, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // watchToolStripMenuItem
+            // 
+            this.watchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stockStateSummaryToolStripMenuItem,
+            this.marketByOrderToolStripMenuItem,
+            this.marketByPriceToolStripMenuItem});
+            this.watchToolStripMenuItem.Name = "watchToolStripMenuItem";
+            this.watchToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.watchToolStripMenuItem.Text = "Watch";
+            this.watchToolStripMenuItem.Click += new System.EventHandler(this.watchToolStripMenuItem_Click);
+            // 
+            // stockStateSummaryToolStripMenuItem
+            // 
+            this.stockStateSummaryToolStripMenuItem.Name = "stockStateSummaryToolStripMenuItem";
+            this.stockStateSummaryToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.stockStateSummaryToolStripMenuItem.Text = "Stock State Summary";
+            this.stockStateSummaryToolStripMenuItem.Click += new System.EventHandler(this.stockStateSummaryToolStripMenuItem_Click);
+            // 
+            // marketByPriceToolStripMenuItem
+            // 
+            this.marketByPriceToolStripMenuItem.Name = "marketByPriceToolStripMenuItem";
+            this.marketByPriceToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.marketByPriceToolStripMenuItem.Text = "Market By Price";
+            // 
+            // ordersToolStripMenuItem
+            // 
+            this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bidToolStripMenuItem,
+            this.askToolStripMenuItem});
+            this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
+            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
+            this.ordersToolStripMenuItem.Text = "Orders";
+            // 
+            // bidToolStripMenuItem
+            // 
+            this.bidToolStripMenuItem.Name = "bidToolStripMenuItem";
+            this.bidToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.bidToolStripMenuItem.Text = "Bid";
+            this.bidToolStripMenuItem.Click += new System.EventHandler(this.bidToolStripMenuItem_Click);
+            // 
+            // askToolStripMenuItem
+            // 
+            this.askToolStripMenuItem.Name = "askToolStripMenuItem";
+            this.askToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.askToolStripMenuItem.Text = "Ask";
+            this.askToolStripMenuItem.Click += new System.EventHandler(this.askToolStripMenuItem_Click);
             // 
             // listWindowsToolStripMenuItem
             // 
@@ -152,101 +193,13 @@
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
-            // watchToolStripMenuItem
-            // 
-            this.watchToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stockStateSummaryToolStripMenuItem,
-            this.marketByOrderToolStripMenuItem,
-            this.marketByPriceToolStripMenuItem});
-            this.watchToolStripMenuItem.Name = "watchToolStripMenuItem";
-            this.watchToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.watchToolStripMenuItem.Text = "Watch";
-            // 
-            // ordersToolStripMenuItem
-            // 
-            this.ordersToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bidToolStripMenuItem,
-            this.askToolStripMenuItem});
-            this.ordersToolStripMenuItem.Name = "ordersToolStripMenuItem";
-            this.ordersToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.ordersToolStripMenuItem.Text = "Orders";
-            // 
-            // stockStateSummaryToolStripMenuItem
-            // 
-            this.stockStateSummaryToolStripMenuItem.Name = "stockStateSummaryToolStripMenuItem";
-            this.stockStateSummaryToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.stockStateSummaryToolStripMenuItem.Text = "Stock State Summary";
-            // 
             // marketByOrderToolStripMenuItem
             // 
-            this.marketByOrderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.microsoftToolStripMenuItem,
-            this.appleIncToolStripMenuItem,
-            this.facebookIncToolStripMenuItem});
             this.marketByOrderToolStripMenuItem.Name = "marketByOrderToolStripMenuItem";
             this.marketByOrderToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
             this.marketByOrderToolStripMenuItem.Text = "Market By Order";
             // 
-            // marketByPriceToolStripMenuItem
-            // 
-            this.marketByPriceToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.microsoftToolStripMenuItem1,
-            this.appleIncToolStripMenuItem1,
-            this.facebookIncToolStripMenuItem1});
-            this.marketByPriceToolStripMenuItem.Name = "marketByPriceToolStripMenuItem";
-            this.marketByPriceToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.marketByPriceToolStripMenuItem.Text = "Market By Price";
-            // 
-            // microsoftToolStripMenuItem
-            // 
-            this.microsoftToolStripMenuItem.Name = "microsoftToolStripMenuItem";
-            this.microsoftToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.microsoftToolStripMenuItem.Text = "Microsoft Corporation";
-            this.microsoftToolStripMenuItem.Click += new System.EventHandler(this.microsoftToolStripMenuItem_Click);
-            // 
-            // appleIncToolStripMenuItem
-            // 
-            this.appleIncToolStripMenuItem.Name = "appleIncToolStripMenuItem";
-            this.appleIncToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.appleIncToolStripMenuItem.Text = "Apple Inc.";
-            // 
-            // facebookIncToolStripMenuItem
-            // 
-            this.facebookIncToolStripMenuItem.Name = "facebookIncToolStripMenuItem";
-            this.facebookIncToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
-            this.facebookIncToolStripMenuItem.Text = "Facebook, Inc.";
-            // 
-            // microsoftToolStripMenuItem1
-            // 
-            this.microsoftToolStripMenuItem1.Name = "microsoftToolStripMenuItem1";
-            this.microsoftToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.microsoftToolStripMenuItem1.Text = "Microsoft Corporation";
-            // 
-            // appleIncToolStripMenuItem1
-            // 
-            this.appleIncToolStripMenuItem1.Name = "appleIncToolStripMenuItem1";
-            this.appleIncToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.appleIncToolStripMenuItem1.Text = "Apple Inc.";
-            // 
-            // facebookIncToolStripMenuItem1
-            // 
-            this.facebookIncToolStripMenuItem1.Name = "facebookIncToolStripMenuItem1";
-            this.facebookIncToolStripMenuItem1.Size = new System.Drawing.Size(192, 22);
-            this.facebookIncToolStripMenuItem1.Text = "Facebook, Inc.";
-            // 
-            // bidToolStripMenuItem
-            // 
-            this.bidToolStripMenuItem.Name = "bidToolStripMenuItem";
-            this.bidToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.bidToolStripMenuItem.Text = "Bid";
-            // 
-            // askToolStripMenuItem
-            // 
-            this.askToolStripMenuItem.Name = "askToolStripMenuItem";
-            this.askToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.askToolStripMenuItem.Text = "Ask";
-            // 
-            // StockMarketDisplay
+            // StockMarketMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -254,8 +207,9 @@
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "StockMarketDisplay";
+            this.Name = "StockMarketMainForm";
             this.Text = "Stock Securities Exchange";
+            this.Load += new System.EventHandler(this.StockMarketMainForm_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -279,17 +233,11 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem watchToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stockStateSummaryToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem marketByOrderToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem microsoftToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marketByPriceToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ordersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem appleIncToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem facebookIncToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem microsoftToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem appleIncToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem facebookIncToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem bidToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem askToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem marketByOrderToolStripMenuItem;
     }
 }
 

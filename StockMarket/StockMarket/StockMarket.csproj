@@ -51,6 +51,12 @@
     <Compile Include="AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BidForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BidForm.Designer.cs">
+      <DependentUpon>BidForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Company.cs" />
     <Compile Include="MarketByOrder.cs" />
     <Compile Include="MarketByOrderForm.cs">
@@ -68,6 +74,12 @@
     </Compile>
     <Compile Include="Order.cs" />
     <Compile Include="RealTimeData.cs" />
+    <Compile Include="SellForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SellForm.Designer.cs">
+      <DependentUpon>SellForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StockData.cs" />
     <Compile Include="StockMarket.cs" />
     <Compile Include="StockMarketDisplay.cs" />
@@ -89,6 +101,18 @@
     <EmbeddedResource Include="AboutForm.resx">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="BidForm.resx">
+      <DependentUpon>BidForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketByOrderForm.resx">
+      <DependentUpon>MarketByOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MarketByPriceForm.resx">
+      <DependentUpon>MarketByPriceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SellForm.resx">
+      <DependentUpon>SellForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StockMarketMainForm.resx">
       <DependentUpon>StockMarketMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -101,6 +125,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="StockStateSummaryForm.resx">
+      <DependentUpon>StockStateSummaryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

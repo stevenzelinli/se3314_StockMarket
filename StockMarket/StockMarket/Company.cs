@@ -6,27 +6,46 @@ using System.Threading.Tasks;
 
 namespace StockMarket
 {
-    class Company
+    public class Company
     {
         string name, symbol;
         double openPrice, lastPrice;
         long volume;
-        List<Order> orderList;
+        List<Order> buyOrders;
+        List<Order> sellOrders;
+        List<Tuple<Order, Order>> resolvedOrders;
         public Company(string name, string symbol, double openPrice)
         {
             this.name = name;
             this.symbol = symbol;
             this.openPrice = openPrice;
-            orderList = new List<Order>();
+            buyOrders = new List<Order>();
+            sellOrders = new List<Order>();
+            resolvedOrders = new List<Tuple<Order, Order>>();
             lastPrice = 0;
             volume = 0;
         }
-        public void addOrder(Order order)
+        //BUYING
+        public void buyOrder(int newOrderSize, double newOrderPrice)
         {
-            volume += order.OrderSize;
-            lastPrice = order.OrderPrice;
-            orderList.Add(order);
+            volume = volume + newOrderSize;
+            lastPrice = newOrderPrice;
+            if (newOrderSize > 0)
+            {
+                buyOrders.Add(new Order(newOrderSize, newOrderPrice));
+            }
         }
+        //SELLING
+        public void sellOrder(int newOrderSize, double newOrderPrice)
+        {
+            volume = volume + newOrderSize;
+            lastPrice = newOrderPrice;
+            if (newOrderSize > 0)
+            {
+                sellOrders.Add(new Order(newOrderSize, newOrderPrice));
+            }
+        }
+
         public string CompanyName
         {
             get { return name; }
@@ -34,8 +53,8 @@ namespace StockMarket
         }
         public string CompanySymbol
         {
-            get { return name; }
-            set { name = value; }
+            get { return symbol; }
+            set { symbol = value; }
         }
         public double OpenPrice
         {
@@ -52,10 +71,14 @@ namespace StockMarket
             get { return volume; }
             set { volume = value; }
         }
-        public List<Order> OrderList
+        public List<Order> BuyOrders
         {
-            get { return orderList; }
-            set { orderList = value; }
+            get { return buyOrders; }
+        }
+
+        public List<Order> SellOrders
+        {
+            get { return sellOrders; }
         }
     }
 }

@@ -6,8 +6,12 @@ using System.Threading.Tasks;
 
 namespace StockMarket
 {
-    class RealTimeData : StockMarket
+    public class RealTimeData : StockMarket
     {
-        StockData currentData;
+        public RealTimeData()
+        {
+            this.observers = new List<IObserver<StockData>>();
+            this.stockData = new StockData(this);
+        }
     }
 }
